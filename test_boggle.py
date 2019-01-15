@@ -10,6 +10,13 @@ class TestBoggle(unittest.TestCase):
         """
         Test to see if we can create an empty grid
         """
-        grid = boggle.make_grid(0,0)
+        grid = boggle.make_grid(0, 0)
         self.assertEqual(len(grid), 0)
-        
+    
+    def test_area_is_width_times_height(self):
+        """
+        Test is to ensure grid size is ewual to
+        width * height
+        """
+        grid = boggle.make_grid(2, 3)
+        self.assertEqual(len(grid), 6)
