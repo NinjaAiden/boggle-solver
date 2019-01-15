@@ -9,5 +9,4 @@ def make_grid(width, height):
             for col in range(width)
         }
     else:
-        print("Please enter a valid number")
         return {}
