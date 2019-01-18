@@ -86,7 +86,20 @@ def search(grid, dictionary):
 
 def get_dictionary(dictionary_file):
     """
-    load dictioanry file
+    load dictionary file
     """
     with open(dictionary_file) as f:
         return[w.strip().upper() for w in f]
+
+def main():
+    """
+    this is the function that will run the whole project
+    """
+    grid = make_grid(3, 3)
+    dictionary = get_dictionary('words.txt')
+    words = search(grid, dictionary)
+    for word in words:
+        print(word)
+    print("Found %s words" % len(words))
+
+main()
