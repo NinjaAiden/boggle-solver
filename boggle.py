@@ -102,4 +102,5 @@ def main():
         print(word)
     print("Found %s words" % len(words))
 
-main()
+if __name__ == "__main__":
+    main()
