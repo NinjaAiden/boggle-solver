@@ -91,6 +91,14 @@ def get_dictionary(dictionary_file):
     with open(dictionary_file) as f:
         return[w.strip().upper() for w in f]
 
+def display_words(words):
+    """
+    prints out list of words and total number of words found
+    """
+    for word in words:
+        print(word)
+    print("Found %s words" % len(words))
+
 def main():
     """
     this is the function that will run the whole project
@@ -98,9 +106,7 @@ def main():
     grid = make_grid(3, 3)
     dictionary = get_dictionary('words.txt')
     words = search(grid, dictionary)
-    for word in words:
-        print(word)
-    print("Found %s words" % len(words))
+    display_words(words)
 
 if __name__ == "__main__":
     main()
