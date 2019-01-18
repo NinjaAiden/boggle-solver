@@ -78,3 +78,20 @@ class TestBoggle(unittest.TestCase):
         twoLeterWord = boggle.path_to_word(grid, [(0, 0), (1, 1)])
         self.assertEqual(oneLetterWord, grid[(0, 0)])
         self.assertEqual(twoLeterWord, grid[(0, 0)] + grid[(1, 1)])
+    
+    def test_search_grid_for_words(self):
+        """
+        Ensure that certain patterns can be found in a path_to_word
+        """
+        grid = {(0, 0): 'A',(0, 1): 'B', (1, 0): 'C', (1, 1): 'D' }
+        twoLeterWord = 'AB'
+        threeLetterWord = 'ABC'
+        notThereWord = 'EEE'
+        dictionary = [twoLeterWord, threeLetterWord, notThereWord]
+        
+        foundWords = boggle.search(grid, dictionary)
+        self.assertTrue(twoLeterWord in foundWords)
+        self.assertTrue(threeLetterWord in foundWords)
+        self.assertTrue(notThereWord not in foundWords)
+        
+        
