@@ -68,3 +68,13 @@ class TestBoggle(unittest.TestCase):
             others = list(grid) # creates a new list from the dictionary's keys
             others.remove(pos)
             self.assertListEqual(sorted(neighbours[pos]), sorted(others))
+    
+    def test_converting_a_path_to_a_word(self):
+        """
+        Ensure that a path can be converted into words
+        """
+        grid = boggle.make_grid(2, 2)
+        oneLetterWord = boggle.path_to_word(grid, [(0, 0)])
+        twoLeterWord = boggle.path_to_word(grid, [(0, 0), (1, 1)])
+        self.assertEqual(oneLetterWord, grid[(0, 0)])
+        self.assertEqual(twoLeterWord, grid[(0, 0)] + grid[(1, 1)])
