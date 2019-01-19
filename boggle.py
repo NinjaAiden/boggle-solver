@@ -60,9 +60,6 @@ def path_to_word(grid, path):
     """
     return ''.join([grid[p] for p in path])
 
-def word_in_dictionary(word, dict):
-    return word in dict
-
 def search(grid, dictionary):
     """
     search through paths to locate words by matching strings
